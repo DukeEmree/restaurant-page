@@ -7,10 +7,10 @@ function menuAdd(path,paragraf,contentAccess){
     let p = document.createElement("p");
     p.innerHTML=paragraf;
     img.src=path;
-    content.appendChild(div);
     div.appendChild(img);
     div.appendChild(p);
     
+    return div;
 
 
 }

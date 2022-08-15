@@ -6,6 +6,7 @@ const nav = document.createElement("div");
 const logo_image = document.createElement("img");
 const myH1 = document.createElement("h1");
 const myH3 = document.createElement("h3");
+let myMenuDiv= document.createElement("div");
 
 let onMenuPage=true;
 
@@ -15,33 +16,37 @@ function menuPage() {
     header_content.remove();
     console.log(onMenuPage);
 
-    
-  
-    menuAdd(
+    content.appendChild(myMenuDiv);
+    myMenuDiv.appendChild(menuAdd(
       "images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
       "menu yemek paragrafları",
       "content"
-    );
-    menuAdd(
+    ))
+    myMenuDiv.appendChild(menuAdd(
       "images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
       "menu yemek paragrafları",
       "content"
-    );
-    menuAdd(
-      "images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
-      "menu yemek paragrafları",
-      "content"
-    );
-    menuAdd(
-      "images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
-      "menu yemek paragrafları",
-      "content"
-    );
-    menuAdd(
-      "images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
-      "menu yemek paragrafları",
-      "content"
-    );
+    ))
+    // menuAdd(
+    //   "images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
+    //   "menu yemek paragrafları",
+    //   "content"
+    // );
+    // menuAdd(
+    //   "images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
+    //   "menu yemek paragrafları",
+    //   "content"
+    // );
+    // menuAdd(
+    //   "images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
+    //   "menu yemek paragrafları",
+    //   "content"
+    // );
+    // menuAdd(
+    //   "images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
+    //   "menu yemek paragrafları",
+    //   "content"
+    // );
     onMenuPage=true;
   }
  
@@ -50,6 +55,9 @@ function menuPage() {
 function homePage() {
   if(onMenuPage){
     console.log(onMenuPage);
+    myMenuDiv.remove();
+
+    
     myH1.innerHTML = "Delicious Food";
     myH3.innerHTML = "Tomato is a delicious restaurant website template";
     logo_image.src = "images/restaurant-icon-png-4877.png";
@@ -59,7 +67,6 @@ function homePage() {
     header_content.setAttribute("id", "header-content");
     logo_image.setAttribute("id", "logo-image");
   
-    navBar();
     content.appendChild(nav);
     content.appendChild(header_content);
     header_content.appendChild(logo_image);
@@ -69,6 +76,7 @@ function homePage() {
   }
  
 }
+navBar();
 homePage();
 
 function navBar(){
@@ -90,9 +98,23 @@ function navBar(){
 
     nav_list.appendChild(li); // append li to ul.
   }
-  nav.appendChild(nav_list);
+  content.appendChild(nav_list);
 
 }
+
 let buttonlar = document.querySelectorAll("button");
 buttonlar[0].addEventListener("click",homePage);
 buttonlar[1].addEventListener("click", menuPage);
+
+function deleteChild() {
+  
+  
+  //e.firstElementChild can be used.
+  var child = content.lastElementChild; 
+  while (child) {
+      content.removeChild(child);
+      child = content.lastElementChild;
+  }
+  
+}
+

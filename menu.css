@@ -24,8 +24,10 @@ body{
 }
 .food-image{
     object-fit: cover;
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 10px;
+    padding: 10px;
     /* height: 300px;
     
     width: 100%; */

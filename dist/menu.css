@@ -1,0 +1,32 @@
+#content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+body{
+    background-color: rgb(162, 29, 214);
+    color: white;
+}
+.menu-item{
+    margin: 10px;
+    padding: 20px;
+    width: 70%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rebeccapurple;
+}
+.food-image{
+    object-fit: cover;
+    max-width: 70%;
+    max-height: 70%;
+    /* height: 300px;
+    
+    width: 100%; */
+}
